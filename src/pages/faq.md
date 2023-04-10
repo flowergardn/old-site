@@ -50,3 +50,15 @@ I do, [here](https://discord.gg/u8gqAsC96e). Though it's not too active, mostly 
 ### Favorite color?
 
 Definitly pink, if you couldn't tell. It's a main color of this site :)
+
+<br />
+
+### Will you do a face reveal?
+
+No. I dislike my face for several reasons, so no one can see it unless they're **super** close to me.
+
+<br />
+
+### Will you do a voice reveal?
+
+I don't plan to ever, not publicly at least. Same reasons as to why I won't face reveal, except I can tolerate my voice better.
