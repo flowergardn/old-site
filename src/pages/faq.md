@@ -7,7 +7,7 @@ heading: "FAQ"
 
 ### Do you do commissions?
 
-Yes! Reach out to me on [Twitter](https://twitter.com/maybeastrid) for more info 💜
+Yes! Read this [blog post](/blog/commisions) for more info 💜
 
 <br />
 
