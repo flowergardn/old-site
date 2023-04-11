@@ -1,6 +1,6 @@
 # astrid.sh
 
-A boring personal website inspired made using [Astro](https://astro.build) and a sprinkle of [React](https://reactjs.org).
+A boring personal website made using [Astro](https://astro.build) and a sprinkle of [React](https://reactjs.org).
 
 ### Stack
 
@@ -22,4 +22,4 @@ pnpm dev
 
 ### Cloning / Forking
 
-This application is licensed under the [Apache-2.0 license](https://github.com/astridlol/astrid.sh/blob/main/LICENSE). It's a modified fork of Nexxels personal site, you can find it [here](https://github.com/nexxeln/nexxel.dev)
+This application is licensed under the [Apache-2.0 license](https://github.com/astridlol/astrid.sh/blob/main/LICENSE). It's a modified fork of the personal site nexxel made, you can find his [here](https://github.com/nexxeln/nexxel.dev)
