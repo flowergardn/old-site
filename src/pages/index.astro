@@ -18,7 +18,7 @@ type PinnedRepo = {
 type AgeResponse = {
   age: number;
   nextBirthday: string;
-}
+};
 
 const pinnedRepos = await fetch(
   "https://gh-pinned.nxl.sh/api/user/astridlol"
@@ -29,9 +29,8 @@ const pinnedRepos = await fetch(
 const ageResponse = await fetch(
   "https://age.kindled.workers.dev/11/19/03"
 ).then(async (response) => {
-  return (await response.json()) as number[];
+  return (await response.json()) as AgeResponse;
 });
-
 ---
 
 <!DOCTYPE html>
@@ -42,20 +41,35 @@ const ageResponse = await fetch(
 
   <body>
     <Header title={SITE_TITLE} />
+    <div
+      class="w-full bg-(themeBlack) mb-8 mt-8 b-1 b-(#404040) rounded-4 pl-4 pr-4 pt-2 pb-2 text-center"
+    >
+      <p>
+        Commissions are open! Check out the <a
+          href="/blog/commisions"
+          target="_blank">blog post</a
+        >
+        for more info.
+      </p>
+    </div>
     <main class="text-lg text-neutral-200">
       <h1 class="text-4xl pb-2">Heyy, I'm Astrid</h1>
       <p>
-        I'm a {ageResponse.age} year old, self-taught developer from Florida and I like to create things.
+        I'm a {ageResponse.age} year old, self-taught developer from Florida and
+        I like to create things.
       </p>
       <br />
       <p>
         I tend to focus more on Discord bot creation with <a
           href="https://www.npmjs.com/package/discordx"
-          target="_blank">DiscordX</a>, and Minecraft plugin development using <a
+          target="_blank">DiscordX</a
+        >, and Minecraft plugin development using <a
           href="https://kotlinlang.org"
-          target="_blank">Kotlin</a>. However, I dabble with the <a
+          target="_blank">Kotlin</a
+        >. However, I dabble with the <a
           href="https://create.t3.gg/"
-          target="_blank">T3 Stack</a> from time to time.
+          target="_blank">T3 Stack</a
+        > from time to time.
       </p>
       <br />
       <br />
