@@ -1,0 +1,33 @@
+---
+import GHProject from "./GHProject.astro";
+
+type PinnedRepo = {
+  owner: string;
+  repo: string;
+  description: string;
+  language: string;
+  languageColor: string;
+  stars: number;
+  forks: string;
+};
+
+const pinnedRepos = await fetch(
+  "https://gh-pinned.nxl.sh/api/user/astridlol"
+).then(async (response) => {
+  return (await response.json()) as PinnedRepo[];
+});
+---
+
+{
+  pinnedRepos.map((repo) => {
+    return (
+      <GHProject
+        name={repo.repo}
+        owner={repo.owner}
+        description={repo.description}
+        stars={repo.stars}
+        language={repo.language}
+      />
+    );
+  })
+}

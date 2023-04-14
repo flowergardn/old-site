@@ -1,0 +1,95 @@
+---
+import { SITE_TITLE } from "../config";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Project from "../components/Project.astro";
+
+const projects: {
+  name: string;
+  description: string;
+  type: string;
+  language: string;
+  link?: string;
+}[] = [
+  {
+    name: "Mizuki",
+    description:
+      "A Minecraft plugin to send Minecraft messages to a Discord channel, and vice versa.",
+    type: "Spigot Plugin",
+    language: "Kotlin",
+    link: "https://github.com/astridlol/mizuki",
+  },
+  {
+    name: "Locksmith",
+    description:
+      "A Minecraft plugin to lock chests, only allowing speciifc keys to be used.",
+    type: "Spigot Plugin",
+    language: "Kotlin",
+    link: "https://github.com/astridlol/locksmith",
+  },
+  {
+    name: "Everly",
+    description:
+      "A white-label Discord bot to send YouTube notifications to a specified channel (Unstable)",
+    type: "Discord bot",
+    language: "TypeScript",
+    link: "https://everly.sh/",
+  },
+  {
+    name: "TimezoneBot",
+    description:
+      "A Discord bot to fetch the timezones of members using interactions.",
+    type: "Discord bot",
+    language: "TypeScript",
+    link: "https://github.com/astridlol/TimezoneBot",
+  },
+  {
+    name: "PowPow",
+    description:
+      "A custom Discord bot for Powfu's official Discord server (5.4k+ members)",
+    type: "Discord bot",
+    language: "JavaScript",
+    link: "https://discord.gg/Powfu",
+  },
+];
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} projects`}
+      description="Portfolio of noteable projects"
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1 class="pb-4">Portfolio</h1>
+      <p>Here are some things I've made in the past.</p>
+      <p>
+        For more GitHub projects, check out the <a href="/">home</a>
+      </p>
+
+      <section
+        class="grid grid-cols-1 gap-4 auto-cols-max sm:grid-cols-2 sm:gap-3 mt-8"
+      >
+        {
+          projects.map((project) => {
+            return (
+              <Project
+                name={project.name}
+                description={project.description}
+                language={project.language}
+                type={project.type}
+                projectLink={project.link ?? ""}
+              />
+            );
+          })
+        }
+      </section>
+    </main>
+    <Footer />
+  </body>
+</html>
