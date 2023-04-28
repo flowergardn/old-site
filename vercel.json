@@ -16,6 +16,10 @@
       "destination": "https://github.com/astridlol"
     },
     {
+      "source": "/cv",
+      "destination": "https://read.cv/astrid"
+    },
+    {
       "source": "/gh",
       "destination": "https://github.com/astridlol"
     },
