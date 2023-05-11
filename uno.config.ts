@@ -1,5 +1,6 @@
 import {
   defineConfig,
+  presetIcons,
   presetUno,
   transformerDirectives,
   transformerVariantGroup,
@@ -7,7 +8,10 @@ import {
 import { presetScrollbar } from "unocss-preset-scrollbar";
 
 export default defineConfig({
-  presets: [presetUno(), presetScrollbar()],
+  presets: [presetUno(), presetScrollbar(),  presetIcons({
+    scale: 1.2,
+    cdn: 'https://esm.sh/'
+  }),],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   theme: {
     fontFamily: {
