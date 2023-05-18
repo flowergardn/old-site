@@ -1,0 +1,42 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ProjectDetails } from "../components/Projects/ProjectDetails";
+
+export interface Props {
+  content: {
+    title: string;
+    shortDesc: string;
+    github: string;
+    languages: string;
+  };
+}
+
+const {
+  content: { title, shortDesc },
+} = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={shortDesc} />
+  </head>
+
+  <body>
+    <Header />
+    <main>
+      <article>
+        <h1>{title}</h1>
+        <p>{shortDesc}</p>
+
+        <div class="pt-4 text-neutral-200">
+          <ProjectDetails client:load project={Astro.props.content} />
+        </div>
+        <hr class="border-(t t-neutral-700) my-8" />
+        <slot />
+      </article>
+    </main>
+    <Footer />
+  </body>
+</html>

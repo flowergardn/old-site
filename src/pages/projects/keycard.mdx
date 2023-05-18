@@ -1,0 +1,37 @@
+---
+layout: "../../layouts/ProjectListing.astro"
+title: "Keycard"
+shortDesc: "Enhanced Discord member verification"
+languages: "Typescript"
+github: "astridlol/Keycard"
+link: "https://kc.astrid.sh"
+---
+
+This project was made with user friction in mind. I wanted it to be as **minimal** as possible. This means no logging into OAuth, or dealing with annoying captchas (I'm looking at you, recaptcha..)
+
+<br />
+
+### Backend tech
+
+<br />
+
+- [tRPC](https://trpc.io/), for an amazing backend.
+- [Prisma](https://prisma.io/), for the ORM.
+- [Planetscale](https://planetscale.com/), for the database.
+
+### Frontend tech
+
+<br />
+
+- [TailwindCSS](https://tailwindcss.com/), obviously.
+- [DaisyUI](https://daisyui.com/), not used much, but provides good styles.
+- [Cloudflare Turnstile](https://www.cloudflare.com/products/turnstile/), for bringing user friction to its lowest point.
+
+<br />
+
+Now that we got some tech covered, let's get into some more details. Keycard doubles as a full-stack application, with the API, Discord bot, and frontend all in one. This is possible using HTTP interactions, which make the infrastructure all in one place, and without a hassle.
+
+<br />
+<br />
+
+When a user verifies themselves successfully, their Discord ID and hashed IP address are stored into a table, _(see schema [here](https://github.com/astridlol/Keycard/blob/main/prisma/schema.prisma#L34))_. This is saved for the alt detection, which scans this table for the same hashed IP address. If there's a match, then a log is sent to the configured Discord channel.

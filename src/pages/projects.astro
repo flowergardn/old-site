@@ -1,0 +1,32 @@
+---
+import type { Project } from "../types";
+import { SITE_TITLE } from "../config";
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { ProjectListings } from "../components/Projects/ProjectListings";
+
+// Use Astro.glob() to fetch all project pages which are not drafts (frontmatter.draft)
+const projects = (await Astro.glob<Project>("./projects/*.{md,mdx}")).filter(
+  (proj) => !proj.frontmatter.draft
+);
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead
+      title={`${SITE_TITLE} projects`}
+      description="A list of the projects I've made"
+    />
+  </head>
+  <body>
+    <Header />
+    <main>
+      <h1 class="pb-6">Projects</h1>
+
+      <ProjectListings projects={projects} client:load />
+    </main>
+    <Footer />
+  </body>
+</html>

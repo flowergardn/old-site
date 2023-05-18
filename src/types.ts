@@ -8,3 +8,14 @@ export interface Post {
     draft?: boolean;
   };
 }
+
+export interface Project {
+  url: string;
+  frontmatter: {
+    title: string;
+    shortDesc: string;
+    github: string;
+    languages: string;
+    draft?: boolean;
+  };
+}
