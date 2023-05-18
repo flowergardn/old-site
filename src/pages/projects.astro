@@ -24,6 +24,7 @@ const projects = (await Astro.glob<Project>("./projects/*.{md,mdx}")).filter(
     <Header />
     <main>
       <h1 class="pb-6">Projects</h1>
+      <p class="pb-6">Here's a work-in-progress list of my projects!</p>
 
       <ProjectListings projects={projects} client:load />
     </main>
