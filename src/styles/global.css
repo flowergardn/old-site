@@ -71,7 +71,7 @@ a {
 }
 
 article a {
-  --at-apply: "text-neutral-100 font-medium underline underline-offset-2";
+  --at-apply: "font-medium underline underline-offset-2";
 }
 
 textarea {
