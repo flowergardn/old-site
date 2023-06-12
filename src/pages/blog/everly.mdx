@@ -1,0 +1,26 @@
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'Everly v2 Released'
+description: 'Version two of Everly, my social media notification bot just released.'
+pubDate: 'June 12, 2023'
+---
+
+import BlurredText from '../../components/Utils/BlurredText.astro';
+
+After months of learning and troubleshooting, I've finally reached a comfortable position to release version two of Everly. Let's talk about it.<br/><br/>
+
+## Why v2?
+
+Version one of Everly was pretty unstable. At the time, I didn't know a ton about web development, it was the best I could do despite it being so counterintuitive :/<br/><br/>
+
+## What's new?
+
+- Users can now create multiple instances! In version one, everything was stored per user. However, in v2, each instance has its own table in an entry. This allows for more flexibility, and eventually support for giving access to specific instances 👀
+
+- Twitch support! Support for Twitch streams was a commonly requested feature, and it's now here. The system in between instance types is really simple thankfully.
+
+- Much more stability and user friendliness. Everly now leverages tech such as Prisma, tRPC, Clerk, zod, and Sentry :)
+  - Everly now provides a full-fledge embed builder! In version one, you had the option to either edit the message content, or paste in a JSON body. This was impractical from both a developer standpoint, and a user standpoint; so it has been foregoed.
+  - Streamlined onboarding. The site now guides you through the process step by step, rather than assuming users will do everything in the right order.
+
+All in all, version two of Everly is great, and I'm so proud to have released it. For those of you who've read this far, take a discount code. <BlurredText>wsxdahpgofx</BlurredText> <br/>It provides you with **25%** of an Everly license, making it just **$7.50 / lifetime**. If you're interested you can purchase it [here](https://everly.sh/api/purchase) :)
