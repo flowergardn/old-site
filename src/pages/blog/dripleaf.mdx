@@ -1,0 +1,58 @@
+---
+layout: '../../layouts/BlogPost.astro'
+title: 'My biggest project ever, Dripleaf.'
+description: 'An in-depth overview of the technology my Minecraft server host uses'
+pubDate: 'July 23, 2023'
+---
+
+For those who aren't aware, Dripleaf is a Minecraft server hosting network I have been developing since the start of the year.
+
+<br />
+## But what does that mean?
+
+To put it simply, a Minecraft server hosting network is where users can create a Minecraft server and will be able to connect to it through our lobby; thus creating a "network" of Minecraft servers.
+
+<br />
+## How is this possible?
+
+Dripleaf is made possible by **so many** amazing technologies. Let's start with the proxy side of things, then we can get into the fun stuff later.
+
+<br />
+### Proxy technology
+
+The "proxy" is the Minecraft server players connect to. It connects them to the entire network of Dripleaf, giving them access to play any currently running server.<br/><br/>
+
+- The proxy software of choice was [Velocity](https://papermc.io/software/velocity) due to its ease of use, regular updates, and security.
+- For the proxy to connect with the backend, and vice versa, [Pusher](https://pusher.com/) is used as our WebSocket client.
+  Pusher was chosen due to how "complex" solutions like socket.io can be, as well as its support for serverless architecture
+
+<br />
+### App technology
+
+The entire frontend and backend of Dripleaf are bootstrapped with [Create T3 App](https://create.t3.gg/), which makes it easy for you to create an app with bootstrapped technologies. The stack of Dripleaf is meant to increase speed, and it surely succeeded at that.<br/><br/>
+
+- For our database, we're using [Planetscale](https://planetscale.com/) with [Prisma 5](https://prisma.io/) as our ORM. This has been such an enjoyable experience, and I can't imagine switching from Prisma.
+- In terms of authentication, we use [Clerk](https://clerk.dev) for that. Some people hate it, some people love it. We chose it here due to the simplicity, and relieves the burden of maintaining and rolling our own auth.
+- For error logging and analytics, we use self-hosted instances of both [Sentry](https://sentry.io) and [Plausible](https://plausible.io), both have been amazing so far.
+- For our UI, we use various libraries to make it look good and function properly.
+  - We've built on top of [Radix](https://www.radix-ui.com/) for the majority of our component library, so we can have our look without sacrificing functionality.
+  - File uploads are handled by [UploadThing](https://uploadthing.com/), which makes things **very** simple in a short period of time.
+  - For managing the several forms across the site, that's where [React Hook Form](https://react-hook-form.com/) comes in. It provides easy-to-use validation and handling for any sort of form we need.
+- Now, for our backend.
+  - The majority of our backend is written using [tRPC](https://trpc.io/), which creates a wonderful experience for both myself and the users. For routes that need to be easily accessed externally (e.g. in our Minecraft proxy), regular Next.js API routes are used.
+  - For payments, [Stripe](https://stripe.com/) is used. Its developer experience has been top-tier as of right now.
+  - For our emails, we use [Resend](https://resend.com/) along with [React Email](https://react.email/) to make them look awesome.
+
+<br />
+## This seems great, how can I support you?
+
+There are a few ways you can support Dripleaf 🎉<br />
+
+- Spread the word! Telling a friend about the project goes further than
+  you would think.
+  - You can also do this by following the [Twitter
+    account](https://twitter.com/dripleafcc) c:
+- Simply join our [Discord](https://discord.dripleaf.cc/), the more members
+  the better
+- Donate at our [donate page](https://dripleaf.cc/donate) any amount
+  helps and the team will be truly grateful
